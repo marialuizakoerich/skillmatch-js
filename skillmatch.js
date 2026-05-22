@@ -241,6 +241,22 @@ ${this.gerarRecomendacaoEstudo()}
   }
 
 
+  buscarVagasSimuladas() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(this.vagas);
+      }, 1000);
+    });
+  }
+
+  async iniciarAnaliseAsync() {
+    console.log("Carregando vagas...");
+    await this.buscarVagasSimuladas();
+    console.log("Vagas carregadas com sucesso!");
+    return this.analisarTodasAsVagas();
+  }
+
+
 }
 
 
@@ -309,3 +325,8 @@ const candidato = new Candidato(
 // Criando a Candidatura
 // ─────────────────────────────────────────────
 const candidaturaTeste = new Candidatura(candidato, vagas);
+
+
+
+
+
