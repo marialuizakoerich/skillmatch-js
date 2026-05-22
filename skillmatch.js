@@ -358,11 +358,8 @@ async function main() {
     console.log("Análise finalizada com sucesso!");
   });
 
-  candidaturaTeste.exibirResultadoFinal((analise, melhorVaga, recomendacao) => {
-    console.log(analise);
-    console.log(melhorVaga);
-    console.log(recomendacao);
-  });
+  console.log(candidaturaTeste.mostrarMelhorVaga());
+  console.log(candidaturaTeste.mostrarRecomendacaoEstudo());
 }
 
 main();
