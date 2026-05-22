@@ -47,6 +47,36 @@ class VagaFrontEnd extends Vaga {
   }
 }
 
+// ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+//  CLASSE: Candidatura - Centraliza toda a lógica de análise: compatibilidade, habilidades, recomendação, callback, closure, Promise e async/await.
+// ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+class Candidatura {
+    constructor(candidato, vagas) {
+        this.candidato = candidato;
+        this.vagas = vagas;
+  }
+
+// ─────────────────────────────────────────────
+// RF08 – Método de array: filter
+// ─────────────────────────────────────────────
+  identificarHabilidadesEncontradas(vaga) {
+    return vaga.requisitos.filter((requisito) =>
+      this.candidato.habilidades.includes(requisito)
+    );
+  }
+
+// ─────────────────────────────────────────────────
+// RF05 + RF08 – Habilidades faltantes usando filter
+// ─────────────────────────────────────────────────
+  listarHabilidadesFaltantes(vaga) {
+    return vaga.requisitos.filter((requisito) =>
+      !this.candidato.habilidades.includes(requisito)
+    );
+  }
+}
+
+
+
 // ─────────────────────────────────────────────────
 //  RF02 – Array de vagas fictícias
 // ─────────────────────────────────────────────────
