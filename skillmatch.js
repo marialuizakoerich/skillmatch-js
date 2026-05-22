@@ -103,6 +103,26 @@ class Candidatura {
     }
   }
 
+  // ─────────────────────────────────────────────────────────────────
+// RF06 – Encontrar a vaga com maior compatibilidade usando for...of
+// ─────────────────────────────────────────────────────────────────
+  encontrarVagaComMaiorCompatibilidade(vagas) {
+    let melhorVaga = null;
+    let maiorCompatibilidade = 0;
+
+    for (const vaga of vagas) {
+      const compatibilidade = this.calcularPercentualCompatibilidade(vaga);
+
+      if (compatibilidade > maiorCompatibilidade) {
+        maiorCompatibilidade = compatibilidade;
+        melhorVaga = vaga;
+      }
+    }
+
+    return melhorVaga;
+  }
+
+
 
 
 }
