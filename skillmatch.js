@@ -104,7 +104,7 @@ class Candidatura {
   }
 
   // ─────────────────────────────────────────────────────────────────
-// RF06 – Encontrar a vaga com maior compatibilidade usando for...of
+// RF06 – Encontrar a vaga com maior compatibilidade
 // ─────────────────────────────────────────────────────────────────
   encontrarVagaComMaiorCompatibilidade(vagas) {
     let melhorVaga = null;
@@ -120,6 +120,29 @@ class Candidatura {
     }
 
     return melhorVaga;
+  }
+
+  // ───────────────────────────────────
+// RF07 – Gerar recomendação de estudo
+// ───────────────────────────────────
+  gerarRecomendacaoEstudo() {
+    const habilidadesFaltantes = [];
+
+    for (const vaga of this.vagas) {
+      const faltantes = this.listarHabilidadesFaltantes(vaga);
+
+      for (const habilidade of faltantes) {
+        if (!habilidadesFaltantes.includes(habilidade)) {
+          habilidadesFaltantes.push(habilidade);
+        }
+      }
+    }
+
+    if (habilidadesFaltantes.length === 0) {
+      return "Parabéns! O candidato atende todos os requisitos das vagas analisadas.";
+    }
+
+    return `Priorize estudar ${habilidadesFaltantes.join(", ")}, pois esses conteúdos aparecem nas vagas analisadas.`;
   }
 
 
