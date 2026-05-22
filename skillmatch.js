@@ -22,9 +22,9 @@ class Vaga {
     this.modalidade = modalidade;
   }
 
-// ─────────────────────────────────────────────
-// RF11 – Uso do this dentro de um método
-// ─────────────────────────────────────────────
+  // ─────────────────────────────────────────────
+  // RF11 – Uso do this dentro de um método
+  // ─────────────────────────────────────────────
   exibirResumo() {
     return `${this.cargo} na empresa ${this.empresa}`;
   }
@@ -39,9 +39,9 @@ class VagaFrontEnd extends Vaga {
     this.nivel = nivel;
   }
 
-// ─────────────────────────────────────────────
-// RF11 – Uso do this dentro de um método
-// ─────────────────────────────────────────────
+  // ─────────────────────────────────────────────
+  // RF11 – Uso do this dentro de um método
+  // ─────────────────────────────────────────────
   exibirNivel() {
     return `Nível da vaga: ${this.nivel}`;
   }
@@ -57,7 +57,7 @@ const vagas = [
     ["JavaScript", "GitHub", "HTML"],
     2800,
     "Remoto",
-    "Júnior"
+    "Júnior",
   ),
 
   new VagaFrontEnd(
@@ -66,7 +66,7 @@ const vagas = [
     ["JavaScript", "Kanban", "CSS"],
     1800,
     "Híbrido",
-    "Estágio"
+    "Estágio",
   ),
 
   new VagaFrontEnd(
@@ -75,7 +75,7 @@ const vagas = [
     ["JavaScript", "Arrays", "Objetos", "Funções"],
     3000,
     "Presencial",
-    "Júnior"
+    "Júnior",
   ),
 
   new VagaFrontEnd(
@@ -84,7 +84,7 @@ const vagas = [
     ["JavaScript", "React", "CSS", "GitHub"],
     3500,
     "Remoto",
-    "Júnior"
+    "Júnior",
   ),
 
   new VagaFrontEnd(
@@ -93,6 +93,21 @@ const vagas = [
     ["HTML", "CSS", "Lógica de Programação", "React"],
     2200,
     "Híbrido",
-    "Assistente"
+    "Assistente",
   ),
 ];
+
+// ─────────────────────────────────────────────
+//  RF01 – Criação do candidato
+// ─────────────────────────────────────────────
+const candidato = new Candidato(
+  "Maria Luiza",
+  "Front-End",
+  ["Lógica de Programação", "React", "JavaScript", "HTML", "CSS", "GitHub"],
+  8,
+);
+
+// ─────────────────────────────────────────────
+// Criando a Candidatura
+// ─────────────────────────────────────────────
+const candidaturaTeste = new Candidatura(candidato, vagas);
