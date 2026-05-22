@@ -213,7 +213,32 @@ Classificação: ${this.classificacaoCandidatoPorPercentual(vaga)}
     );
   }
 
+// ────────────────────────────────────────────────
+// Exibe a vaga com maior compatibilidade formatada
+// ────────────────────────────────────────────────
+  mostrarMelhorVaga() {
+    const melhorVaga = this.encontrarVagaComMaiorCompatibilidade(this.vagas);
+    const compatibilidade = this.calcularPercentualCompatibilidade(melhorVaga);
 
+    return `
+============= MELHOR VAGA =============
+Empresa: ${melhorVaga.empresa}
+Cargo: ${melhorVaga.cargo}
+Compatibilidade: ${compatibilidade}%
+Modalidade: ${melhorVaga.modalidade}
+Nível: ${melhorVaga.nivel ?? "Não informado"}
+`;
+  }
+  
+  // ────────────────────────────────────────
+// Exibe a recomendação de estudo formatada
+// ────────────────────────────────────────
+  mostrarRecomendacaoEstudo() {
+    return `
+============= RECOMENDAÇÃO DE ESTUDO =============
+${this.gerarRecomendacaoEstudo()}
+`;
+  }
 
 
 }
