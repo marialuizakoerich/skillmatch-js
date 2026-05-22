@@ -73,6 +73,38 @@ class Candidatura {
       !this.candidato.habilidades.includes(requisito)
     );
   }
+
+  // ─────────────────────────────────────────────────
+// RF03 – Calcular compatibilidade com cada vaga
+// ─────────────────────────────────────────────────
+  calcularPercentualCompatibilidade(vaga) {
+    const habilidadesEncontradas =
+      this.identificarHabilidadesEncontradas(vaga).length;
+    const totalRequisitosVaga = vaga.requisitos.length;
+
+    const compatibilidade = (habilidadesEncontradas / totalRequisitosVaga) * 100;
+
+    return parseFloat(compatibilidade.toFixed(2));;
+  }
+
+
+// ───────────────────────────────────────────────
+//RF04 – Classificar a compatibilidade
+// ───────────────────────────────────────────────
+  classificacaoCandidatoPorPercentual(vaga) {
+    const compatibilidade = this.calcularPercentualCompatibilidade(vaga);
+
+    if (compatibilidade <= 49) {
+      return `O candidato possui baixa compatibilidade: ${compatibilidade}%`;
+    } else if (compatibilidade <= 79) {
+      return `O candidato possui média compatibilidade: ${compatibilidade}%`;
+    } else {
+      return `O candidato possui alta compatibilidade: ${compatibilidade}%`;
+    }
+  }
+
+
+
 }
 
 
