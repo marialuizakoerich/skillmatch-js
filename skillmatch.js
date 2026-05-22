@@ -182,10 +182,40 @@ Classificação: ${this.classificacaoCandidatoPorPercentual(vaga)}
     return analises.join("\n");
   }
 
+// ───────────────────────────────────────────────────────────────────────
+// RF13 – Closure: mantém o contador de vagas analisadas no escopo interno
+// ───────────────────────────────────────────────────────────────────────
+  criarContadorVagasAnalisadas() {
+    let total = 0;
+
+    return function () {
+      total++;
+      return total;
+    };
+  }
+
+  // ───────────────────────────────────────────────────────────
+// RF12 – Callback: recebe uma função e a executa ao finalizar
+// ───────────────────────────────────────────────────────────
+  finalizarAnalise(callback) {
+    callback();
+  }
+
+
+  // ───────────────────────────────────────────────────────────────────────────
+// RF12 – Callback: passa os resultados como argumentos para a função recebida
+// ───────────────────────────────────────────────────────────────────────────
+  exibirResultadoFinal(callback) {
+    return callback(
+      this.analisarTodasAsVagas(),
+      this.mostrarMelhorVaga(),
+      this.mostrarRecomendacaoEstudo()
+    );
+  }
 
 
 
-  
+
 }
 
 
