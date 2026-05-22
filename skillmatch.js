@@ -146,8 +146,46 @@ class Candidatura {
   }
 
 
+// ───────────────────────────────────────────────────────────
+// RF08 – Uso do map para gerar a análise de todas as vagas
+// RF13 – Closure: criarContadorVagasAnalisadas é chamado aqui
+// ───────────────────────────────────────────────────────────
+  analisarTodasAsVagas() {
+    const contador = this.criarContadorVagasAnalisadas();
+
+    const analises = this.vagas.map((vaga) => {
+      const habilidadesEncontradas = this.identificarHabilidadesEncontradas(vaga);
+      const habilidadesFaltantes = this.listarHabilidadesFaltantes(vaga);
+      const compatibilidade = this.calcularPercentualCompatibilidade(vaga);
+
+      return `
+---------------- VAGA ${contador()} ----------------
+Empresa: ${vaga.empresa}
+Cargo: ${vaga.cargo}
+Requisitos: ${vaga.requisitos.join(", ")}
+Habilidades do candidato: ${this.candidato.habilidades.join(", ")}
+Habilidades encontradas: ${
+        habilidadesEncontradas.length > 0
+          ? habilidadesEncontradas.join(", ")
+          : "Nenhuma habilidade encontrada"
+      }
+Habilidades faltantes: ${
+        habilidadesFaltantes.length > 0
+          ? habilidadesFaltantes.join(", ")
+          : "Nenhuma habilidade faltante"
+      }
+Compatibilidade: ${compatibilidade}%
+Classificação: ${this.classificacaoCandidatoPorPercentual(vaga)}
+`;
+    });
+
+    return analises.join("\n");
+  }
 
 
+
+
+  
 }
 
 
