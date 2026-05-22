@@ -330,3 +330,39 @@ const candidaturaTeste = new Candidatura(candidato, vagas);
 
 
 
+// ─────────────────────────────────────────────
+//  TESTES DE VALIDAÇÃO (comentados)
+// ─────────────────────────────────────────────
+
+//console.log("Candidato:", candidato);
+//console.log("Total de vagas:", vagas.length);
+
+//console.log("Primeira vaga:", vagas[0]);
+//console.log("Resumo da primeira vaga:", vagas[0].exibirResumo());
+//console.log("Nível da primeira vaga:", vagas[0].exibirNivel());
+
+//console.log(candidaturaTeste.identificarHabilidadesEncontradas(vagas[0]));
+//console.log(candidaturaTeste.listarHabilidadesFaltantes(vagas[0]));
+//console.log(candidaturaTeste.calcularPercentualCompatibilidade(vagas[0]));
+//console.log(candidaturaTeste.classificacaoCandidatoPorPercentual(vagas[0]));
+//console.log(candidaturaTeste.encontrarVagaComMaiorCompatibilidade(vagas));
+
+// ─────────────────────────────────────────────
+//  EXECUÇÃO PRINCIPAL
+// ─────────────────────────────────────────────
+async function main() {
+  const resultado = await candidaturaTeste.iniciarAnaliseAsync();
+  console.log(resultado);
+
+  candidaturaTeste.finalizarAnalise(() => {
+    console.log("Análise finalizada com sucesso!");
+  });
+
+  candidaturaTeste.exibirResultadoFinal((analise, melhorVaga, recomendacao) => {
+    console.log(analise);
+    console.log(melhorVaga);
+    console.log(recomendacao);
+  });
+}
+
+main();
