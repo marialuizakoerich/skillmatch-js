@@ -46,3 +46,53 @@ class VagaFrontEnd extends Vaga {
     return `Nível da vaga: ${this.nivel}`;
   }
 }
+
+// ─────────────────────────────────────────────────
+//  RF02 – Array de vagas fictícias
+// ─────────────────────────────────────────────────
+const vagas = [
+  new VagaFrontEnd(
+    "TechStart",
+    "Desenvolvedor Front-End Júnior",
+    ["JavaScript", "GitHub", "HTML"],
+    2800,
+    "Remoto",
+    "Júnior"
+  ),
+
+  new VagaFrontEnd(
+    "CodeLab",
+    "Estágio Front-End",
+    ["JavaScript", "Kanban", "CSS"],
+    1800,
+    "Híbrido",
+    "Estágio"
+  ),
+
+  new VagaFrontEnd(
+    "WebSolutions",
+    "Programador JavaScript Júnior",
+    ["JavaScript", "Arrays", "Objetos", "Funções"],
+    3000,
+    "Presencial",
+    "Júnior"
+  ),
+
+  new VagaFrontEnd(
+    "DevHouse",
+    "Front-End React Developer",
+    ["JavaScript", "React", "CSS", "GitHub"],
+    3500,
+    "Remoto",
+    "Júnior"
+  ),
+
+  new VagaFrontEnd(
+    "PixelTech",
+    "Assistente Front-End",
+    ["HTML", "CSS", "Lógica de Programação", "React"],
+    2200,
+    "Híbrido",
+    "Assistente"
+  ),
+];
