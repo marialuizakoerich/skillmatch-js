@@ -210,7 +210,7 @@ A descrição completa de cada épico e suas atividades está disponível em [`p
 
 ## 🎬 Vídeo de apresentação
 
-🔗 Link do vídeo: *em breve*
+🔗 Link do vídeo: https://youtu.be/9AhwW4r2MWI
 
 ---
 
