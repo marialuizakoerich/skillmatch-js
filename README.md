@@ -2,7 +2,7 @@
 ### Simulador de Compatibilidade com Vagas Front-End Júnior
 
 > Projeto avaliativo do Módulo 01 — Semana 06 | M1S04 Mini-Projeto Avaliativo
-> Curso Desenvolvedor(a) Front-End [React] · SC Tec / Senai SC · Turma 01
+> Curso Desenvolvedor(a) Front-End [React] · SC Tec / Senai SC · Turma 02
 
 ---
 
@@ -225,7 +225,7 @@ A descrição completa de cada épico e suas atividades está disponível em [`p
 ## 👩‍💻 Autora
 
 **Maria Luiza**
-Curso Desenvolvedor(a) Front-End [React] · SC Tec / Senai SC · Turma 01 · 2026
+Curso Desenvolvedor(a) Front-End [React] · SC Tec / Senai SC · Turma 02 · 2026
 
 
 ---
